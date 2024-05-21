@@ -1,6 +1,7 @@
 from package.maths.point import Point
 
-class straightLine(Point):
+class StraightLine(Point):
+
     def __init__(self, x, y):
         super().__init__(x, y)
 
