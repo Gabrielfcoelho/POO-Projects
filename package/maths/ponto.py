@@ -1,8 +1,12 @@
-class Point:
+from math import sqrt
 
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+class Ponto:
+
+    def __init__(self, x = 0, y = 0):
+        if x >= 0:
+            self.x = x
+        if y >= 0:
+            self.y = y
 
     def set_x(self, x):
         if str(x).isnumeric() and x >= 0:
@@ -21,7 +25,10 @@ class Point:
 
     def get_y(self):
         return self.y
-
+    
+    def modulo(self):
+        return sqrt(self.x ** 2 + self.y ** 2)
+    
     def model(self):
-        print('Posição : ({};{})'.format(self.x, self.y))
+        print('Posição : ({};{}) \nMódulo : {:.2f}'.format(self.get_x(), self.get_y(), self.modulo()))
 

@@ -1,15 +1,15 @@
-from package.maths.point import Point
+from package.maths.ponto import Ponto
 from math import pi
 
 
-class Circle(Point):
+class Circulo(Ponto):
 
     def __init__(self, x, y, raio):
         super().__init__(x, y)
         self.__raio = raio
 
     def set_raio(self, raio):
-        if raio.isnumeric() and raio >= 1:
+        if str(raio).isnumeric() and raio > 0:
             self.__raio = raio
         else:
             self.__raio = 1
@@ -27,4 +27,5 @@ class Circle(Point):
         return pi * self.__raio ** 2
 
     def model(self):
-        print('Posição: ({};{}) \nRaio: {}'.format(self.x, self.y, self.__raio))
+        print('Posição: ({};{})\nMódulo: {:.2f} \nRaio: {}'.format(self.get_x(), self.get_y(), self.modulo(), self.get_raio()))
+        print('Diametro: {}\nPerimetro: {:.2f}\nÁrea: {:.2f}'.format(self.diametro(), self.perimetro(), self.area()))

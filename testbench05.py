@@ -1,9 +1,8 @@
-from package.maths.retangulo import Retangulo
+from package.maths.quadrado import Quadrado
 
 def workspace():
-    meu_quinto_obj = Retangulo(2, 2, 20, 10)
-    print(meu_quinto_obj.perimetro())
-    print(meu_quinto_obj.area())
+    meu_quinto_obj = Quadrado(2, 2, 20)
+    meu_quinto_obj.model()
 
 if __name__ == "__main__":
     workspace()
