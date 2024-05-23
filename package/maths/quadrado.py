@@ -6,6 +6,7 @@ class Quadrado(TrianguloEquilatero):
 
     def __init__(self, x, y, lado):
         super().__init__(x, y, lado)
+        self.n += 1
 
     def perimetro(self):
         return self.lado1 * 4

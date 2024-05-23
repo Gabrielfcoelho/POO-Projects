@@ -6,6 +6,7 @@ class TrianguloEquilatero(Ponto):
     def __init__(self, x, y, lado):
         super().__init__(x, y)
         self.lado1 = lado
+        self.n = 3
 
     def set_lado(self, lado):
         if str(lado).isnumeric() and lado > 0:
@@ -24,6 +25,12 @@ class TrianguloEquilatero(Ponto):
     
     def area(self):
         return self.altura() * self.lado1 / 2
+    
+    def numDiagonal(self):
+        return self.n * (self.n - 3) / 2
+    
+    def AngulosInternos(self):
+        return (self.n - 2) * 180
     
     def model(self):
         super().model()

@@ -11,6 +11,7 @@ class Retangulo(TrianguloEquilatero):
             self.lado2 = lado2
         else:
             self.lado2 = lado1 + 1
+        self.n += 1
 
     def set_lado2(self, lado2):
         if str(lado2).isnumeric() and lado2 > 0:

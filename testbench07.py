@@ -1,9 +1,8 @@
-from package.maths.trianguloEscaleno import TrianguloEscaleno
+from package.maths.trianguloIsosceles import TrianguloIsosceles
 
 def workspace():
-    meu_setimo_obj = TrianguloEscaleno(2, 2, 5, 4, 3)
-    print(meu_setimo_obj.perimetro())
-    print(meu_setimo_obj.area())
+    meu_setimo_obj = TrianguloIsosceles(2, 2, 5, 9)
+    meu_setimo_obj.model()
 
 if __name__ == "__main__":
     workspace()
