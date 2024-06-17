@@ -3,9 +3,7 @@ from math import sqrt
 class Ponto:
 
     def __init__(self, x = 0, y = 0):
-        if x >= 0:
             self.x = x
-        if y >= 0:
             self.y = y
 
     def set_x(self, x):
