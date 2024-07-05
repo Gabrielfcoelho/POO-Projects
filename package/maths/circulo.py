@@ -6,16 +6,18 @@ class Circulo(Ponto):
 
     def __init__(self, x, y, raio):
         super().__init__(x, y)
-        self.__raio = raio
+        self.raio = raio
 
-    def set_raio(self, raio):
+    @property
+    def raio(self):
+        return self.__raio
+    
+    @raio.setter
+    def raio(self, raio):
         if str(raio).isnumeric() and raio > 0:
             self.__raio = raio
         else:
             self.__raio = 1
-
-    def get_raio(self):
-        return self.__raio
 
     def diametro(self):
         return self.__raio * 2
