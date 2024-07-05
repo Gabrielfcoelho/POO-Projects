@@ -6,27 +6,31 @@ class Ponto:
             self.x = x
             self.y = y
 
-    def set_x(self, x):
-        if str(x).isnumeric() and x >= 0:
-            self.x= x
-        else:
-            self.x = 0
-
-    def set_y(self, y):
-        if str(y).isnumeric() and y >= 0:
-            self.y = y
-        else:
-            self.y = 0
-
-    def get_x(self):
-        return self.x
-
-    def get_y(self):
-        return self.y
+    @property
+    def x(self):
+        return self._x
     
+    @x.setter
+    def x(self, x):
+        if str(x).isnumeric() and x >= 0:
+            self._x = x
+        else:
+            self._x = 0
+
+    @property
+    def y(self):
+        return self._y
+    
+    @y.setter
+    def y(self, y):
+        if str(y).isnumeric() and y >= 0:
+            self._y = y
+        else:
+            self._y = 0
+
     def modulo(self):
-        return sqrt(self.x ** 2 + self.y ** 2)
+        return sqrt(self._x ** 2 + self._y ** 2)
     
     def model(self):
-        print('Posição : ({};{}) \nMódulo : {:.2f}'.format(self.get_x(), self.get_y(), self.modulo()))
+        print('Posição : ({};{}) \nMódulo : {:.2f}'.format(self.x, self.y, self.modulo()))
 
