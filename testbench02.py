@@ -1,4 +1,4 @@
-from package.maths.segmentoDeReta import Reta
+from package.maths.reta import Reta
 
 
 def workspace():

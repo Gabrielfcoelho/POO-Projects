@@ -34,3 +34,4 @@ class Ponto:
     def model(self):
         print('Posição : ({};{}) \nMódulo : {:.2f}'.format(self.x, self.y, self.modulo()))
 
+    

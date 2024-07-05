@@ -1,37 +1,29 @@
-from package.maths.ponto import Ponto
+from package.maths.poligono import Poligono
 from math import sqrt
 
-class TrianguloEquilatero(Ponto):
+class TrianguloEquilatero(Poligono):
 
     def __init__(self, x, y, lado):
-        super().__init__(x, y)
-        self.lado1 = lado
-        self.n = 3
-
-    def set_lado(self, lado):
-        if str(lado).isnumeric() and lado > 0:
-            self.lado1 = lado
+        super().__init__(x, y, lado)
+        self.numLado = 3
+    
+    @property
+    def numLado(self):
+        return self._numLado
+    
+    @numLado.setter
+    def numLado(self, x):
+        if x == 3:
+            self._numLado = x
         else:
-            self.lado1 = 1
-
-    def get_lado(self):
-        return self.lado1
+            self._numLado = 3
 
     def altura(self):
-        return self.lado1 * sqrt(3) / 2
+        return self.lado * sqrt(3) / 2
     
-    def perimetro(self):
-        return 3 * self.lado1
-    
-    def area(self):
-        return self.altura() * self.lado1 / 2
-    
-    def numDiagonal(self):
-        return self.n * (self.n - 3) / 2
-    
-    def AngulosInternos(self):
-        return (self.n - 2) * 180
+    def apotema(self):
+        return self.altura() / 3
     
     def model(self):
-        super().model()
+        self.ponto.model()
         print('Altura: {:.2f}\nPerimetro: {}\nÁrea: {:.2f}'.format(self.altura(), self.perimetro(), self.area()))

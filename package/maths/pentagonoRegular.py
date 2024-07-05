@@ -1,26 +1,21 @@
-from package.maths.quadrado import Quadrado
-from math import tan, radians
+from package.maths.poligono import Poligono
 
-class Pentagono(Quadrado):
+class Pentagono(Poligono):
 
     def __init__(self, x, y, lado):
         super().__init__(x, y, lado)
-        self.n += 1
+        self.numLado = 5
 
-    def perimetro(self):
-        return (super().perimetro()) + self.lado1
+    @property
+    def numLado(self):
+        return self._numLado
     
-    def numDiagonal(self):
-        return self.n * (self.n - 3) / 2
-    
-    def AngulosInternos(self):
-        return (self.n - 2) * 180 / self.n
-    
-    def apotema(self):
-        return (self.lado1 / 2) / (tan(radians(36)))
-    
-    def area(self):
-        return self.apotema() * self.perimetro() / 2
-    
+    @numLado.setter
+    def numLado(self, x):
+        if x == 5:
+            self._numLado = x
+        else:
+            self._numLado = 5
+
     def model(self):
         print('Perimetro: {}\nÁrea: {:.2f}\nNúmero de diagonais: {}\nMedida dos ângulos internos: {}'.format(self.perimetro(), self.area(), self.numDiagonal(), self.AngulosInternos()))
