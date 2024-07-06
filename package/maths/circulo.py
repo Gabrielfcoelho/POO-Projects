@@ -8,6 +8,9 @@ class Circulo(Ponto):
         super().__init__(x, y)
         self.raio = raio
 
+    def __str__(self):
+        return f'Círculo na posição ({self.x};{self.y}) e de raio {self.raio}'
+
     @property
     def raio(self):
         return self.__raio
@@ -29,5 +32,7 @@ class Circulo(Ponto):
         return pi * self.__raio ** 2
 
     def model(self):
-        print('Posição: ({};{})\nMódulo: {:.2f} \nRaio: {}'.format(self.get_x(), self.get_y(), self.modulo(), self.get_raio()))
-        print('Diametro: {}\nPerimetro: {:.2f}\nÁrea: {:.2f}'.format(self.diametro(), self.perimetro(), self.area()))
+        print(self.__str__())
+        print(f'Diametro : {self.diametro()}')
+        print(f'Perimetro : {self.perimetro():.2f}')
+        print(f'Area : {self.area():.2f}')

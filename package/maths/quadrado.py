@@ -7,6 +7,9 @@ class Quadrado(Poligono):
         super().__init__(x, y, lado)
         self.numLado = 4
 
+    def __str__(self):
+        return f'Quadrado com lado = {self.lado} un'
+    
     @property
     def numLado(self):
         return self._numLado
@@ -23,7 +26,7 @@ class Quadrado(Poligono):
     
     def diagonal(self):
         return self.lado * sqrt(2)
-
+    
     def model(self):
-        self.ponto.model()
-        print('Perimetro: {}\nÁrea: {}\nDiagonal: {:.2f}\n{}'.format(self.perimetro(), self.area(), self.diagonal(), self.anguloInterno()))
+        super().model()
+        print(f'Tamanho da Diagonal : {self.diagonal():.2f} un')

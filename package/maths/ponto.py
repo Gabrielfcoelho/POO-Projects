@@ -6,6 +6,9 @@ class Ponto:
             self.x = x
             self.y = y
 
+    def __str__(self):
+        return f'Ponto({self.x};{self.y})'
+    
     @property
     def x(self):
         return self._x
@@ -32,6 +35,14 @@ class Ponto:
         return sqrt(self._x ** 2 + self._y ** 2)
     
     def model(self):
-        print('Posição : ({};{}) \nMódulo : {:.2f}'.format(self.x, self.y, self.modulo()))
+        print(self.__str__())
+        print(f'Distância até a origem : {self.modulo():.2f} un')
+
+    def isNumber(self, n):
+        try:
+            float(n)
+        except ValueError:
+            return False
+        return True
 
     

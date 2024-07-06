@@ -7,6 +7,9 @@ class Poligono:
         self.ponto = Ponto(x, y) 
         self.lado = lado
 
+    def __str__(self):
+        return f'Este polígono possui {self.numLado} lados de tamanho {self.lado} un'
+
     @property
     def numLado(self):
         return self._numLado
@@ -24,7 +27,7 @@ class Poligono:
     
     @lado.setter
     def lado(self, lado):
-        if str(lado).isnumeric() and lado > 0:
+        if self.ponto.isNumber(lado) and lado > 0:
             self._lado = lado
         else:
             self._lado = 1
@@ -36,7 +39,7 @@ class Poligono:
        return self.apotema() * self.perimetro() / 2
 
     def numDiagonal(self):
-        return self.numLado * (self.n - 3) / 2
+        return int(self.numLado * (self.numLado - 3) / 2)
     
     def anguloInterno(self):
         return (self.numLado - 2) * 180
@@ -45,7 +48,9 @@ class Poligono:
         return (self.lado / 2) / (tan(radians(360 / (self.numLado * 2))))
 
     def model(self):
-        pass
-
-    def __str__(self):
-        pass
+        print(self.__str__())
+        print(f'Posição : ({self.ponto.x};{self.ponto.y})')
+        print(f'Perimetro : {self.perimetro()} un')
+        print(f'Area : {self.area():.2f} un²')
+        print(f'Numero de diagonais : {self.numDiagonal()}')
+        print(f'Soma dos angulos internos : {self.anguloInterno()}º')

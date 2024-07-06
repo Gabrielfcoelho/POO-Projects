@@ -2,12 +2,13 @@ from package.maths.circulo import Circulo
 
 
 def workspace():
-    meu_segundo_obj = Circulo(2, 2, 5)
-    meu_segundo_obj.model()
-    meu_segundo_obj.set_x(4)
-    meu_segundo_obj.set_y(4)
-    meu_segundo_obj.set_raio(10)
-    meu_segundo_obj.model()
+    circulo = Circulo(2, 2, 5)
+    circulo.model()
+    circulo.x = 4
+    circulo.y = 4
+    circulo.raio = 10
+    circulo.model()
+    print(circulo)
 
 
 if __name__ == "__main__":

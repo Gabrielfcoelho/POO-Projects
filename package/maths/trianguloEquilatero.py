@@ -6,6 +6,9 @@ class TrianguloEquilatero(Poligono):
     def __init__(self, x, y, lado):
         super().__init__(x, y, lado)
         self.numLado = 3
+
+    def __str__(self):
+        return f'Triângulo Equilátero com lado = {self.lado} un'
     
     @property
     def numLado(self):
@@ -25,5 +28,5 @@ class TrianguloEquilatero(Poligono):
         return self.altura() / 3
     
     def model(self):
-        self.ponto.model()
-        print('Altura: {:.2f}\nPerimetro: {}\nÁrea: {:.2f}'.format(self.altura(), self.perimetro(), self.area()))
+        super().model()
+        print(f'Altura : {self.altura():.2f} un')

@@ -1,11 +1,23 @@
-from package.maths.trianguloEquilatero import TrianguloEquilatero
+from package.maths.ponto import Ponto
 from math import sqrt
 
-class TrianguloIsosceles(TrianguloEquilatero):
+class TrianguloIsosceles(Ponto):
 
     def __init__(self, x, y, lado, lado2):
-        super().__init__(x, y, lado)
+        self.ponto = Ponto(x, y)
+        self.lado = lado
         self.lado2 = lado2
+
+    @property
+    def lado(self):
+        return self._lado
+
+    @lado.setter
+    def lado(self, lado):
+        if str(lado).isnumeric() and lado > 0:
+            self._lado = lado
+        else:
+            self._lado = 1
 
     @property
     def lado2(self):
@@ -29,3 +41,6 @@ class TrianguloIsosceles(TrianguloEquilatero):
     
     def model(self):
         super().model()
+
+    def __str__(self):
+        return super().__str__()

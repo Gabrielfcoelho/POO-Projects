@@ -7,12 +7,12 @@ class Reta:
         self.ponto1 = Ponto(x1, y1)
         self.ponto2 = Ponto(x2, y2)
 
+    def __str__(self):
+        return f'Reta contida entre os pontos {self.ponto1} e {self.ponto2}'
+
     def comprimento(self):
         return sqrt((self.ponto1.x - self.ponto2.x) ** 2 + (self.ponto1.y - self.ponto2.y) ** 2)
     
-    def interpolar(self, x):
-        y = self.x * x + self.y
-        return y
-
     def model(self):
-        super().model()
+        print(self.__str__())
+        print(f'Comprimento : {self.comprimento()} un')
