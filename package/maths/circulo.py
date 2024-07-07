@@ -17,7 +17,7 @@ class Circulo(Ponto):
     
     @raio.setter
     def raio(self, raio):
-        if str(raio).isnumeric() and raio > 0:
+        if self.isNumber(raio) and raio > 0:
             self.__raio = raio
         else:
             self.__raio = 1

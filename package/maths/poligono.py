@@ -1,7 +1,8 @@
+from package.maths.isNumber import isNumber
 from package.maths.ponto import Ponto
 from math import tan, radians
 
-class Poligono:
+class Poligono(isNumber):
 
     def __init__(self, x, y, lado):
         self.ponto = Ponto(x, y) 
@@ -16,7 +17,7 @@ class Poligono:
     
     @numLado.setter
     def numLado(self, x):
-        if x >= 3:
+        if self.isNumber(x) and x >= 3:
             self._numLado = x
         else:
             self._numLado = 3
@@ -27,7 +28,7 @@ class Poligono:
     
     @lado.setter
     def lado(self, lado):
-        if self.ponto.isNumber(lado) and lado > 0:
+        if self.isNumber(lado) and lado > 0:
             self._lado = lado
         else:
             self._lado = 1
@@ -54,3 +55,6 @@ class Poligono:
         print(f'Area : {self.area():.2f} un²')
         print(f'Numero de diagonais : {self.numDiagonal()}')
         print(f'Soma dos angulos internos : {self.anguloInterno()}º')
+
+    def type(self):
+        return Poligono

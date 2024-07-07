@@ -1,6 +1,7 @@
+from package.maths.isNumber import isNumber
 from math import sqrt
 
-class Ponto:
+class Ponto(isNumber):
 
     def __init__(self, x = 0, y = 0):
             self.x = x
@@ -15,7 +16,7 @@ class Ponto:
     
     @x.setter
     def x(self, x):
-        if str(x).isnumeric() and x >= 0:
+        if self.isNumber(x) and x >= 0:
             self._x = x
         else:
             self._x = 0
@@ -26,7 +27,7 @@ class Ponto:
     
     @y.setter
     def y(self, y):
-        if str(y).isnumeric() and y >= 0:
+        if self.isNumber(y) and y >= 0:
             self._y = y
         else:
             self._y = 0
@@ -38,11 +39,6 @@ class Ponto:
         print(self.__str__())
         print(f'Distância até a origem : {self.modulo():.2f} un')
 
-    def isNumber(self, n):
-        try:
-            float(n)
-        except ValueError:
-            return False
-        return True
+    
 
     
