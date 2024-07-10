@@ -1,7 +1,7 @@
-class isNumber:
+class IsNumber:
 
-    @classmethod
-    def isNumber(cls, n):
+    @staticmethod
+    def isNumber(n):
         try:
             float(n)
         except ValueError:

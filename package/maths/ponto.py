@@ -1,7 +1,7 @@
-from package.maths.isNumber import isNumber
+from package.maths.isNumber import IsNumber
 from math import sqrt
 
-class Ponto(isNumber):
+class Ponto(IsNumber):
 
     def __init__(self, x = 0, y = 0):
             self.x = x
@@ -36,7 +36,7 @@ class Ponto(isNumber):
         return sqrt(self._x ** 2 + self._y ** 2)
     
     def model(self):
-        print(self.__str__())
+        print(self)
         print(f'Distância até a origem : {self.modulo():.2f} un')
 
     

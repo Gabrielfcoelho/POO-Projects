@@ -12,6 +12,13 @@ def workspace():
     print(Verificador.isCircunscrito(quadrado, circulo))
     print(Verificador.isInscrito(circulo2, quadrado))
 
+    print(Verificador.isCircunscrito(quadrado, circulo2))
+    print(Verificador.isInscrito(circulo, quadrado))
+
+    print(Verificador.isCircunscrito(circulo2, quadrado))
+    print(Verificador.isInscrito(quadrado, circulo))
+
+
 
 
 if __name__ == '__main__':

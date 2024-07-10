@@ -1,35 +1,60 @@
-from package.maths.trianguloEquilatero import TrianguloEquilatero
-from package.maths.quadrado import Quadrado
+from package.maths.ponto import Ponto
+from package.maths.isNumber import IsNumber
 from math import sqrt
 
 
-class Retangulo(TrianguloEquilatero):
+class Retangulo:
 
-    def __init__(self, x, y, lado1, lado2):
-        super().__init__(x, y, lado1)
-        if lado2 != lado1:
-            self.lado2 = lado2
-        else:
-            self.lado2 = lado1 + 1
-        self.n += 1
+    def __init__(self, x, y, base, altura):
+        self.ponto = Ponto(x, y)
+        self.base = base
+        self.altura = altura
+        self.__numLado = 4
 
-    def set_lado2(self, lado2):
-        if str(lado2).isnumeric() and lado2 > 0:
-            self.lado2 = lado2
-        else:
-            self.lado2 = 1
+    def __str__(self):
+        return f'Retângulo com base = {self.base} e altura = {self.altura}'
+
+    @property
+    def base(self):
+        return self._base
     
-    def get_lado2(self):
-        return self.lado2
+    @base.setter
+    def base(self, base):
+        if IsNumber.isNumber(base) and base > 0:
+            self._base = base
+        else:
+            self._base = 1
+
+    @property
+    def altura(self):
+        return self._altura
+    
+    @altura.setter
+    def altura(self, altura):
+        if IsNumber.isNumber(altura) and altura > 0:
+            self._altura = altura
+        else:
+            self._altura = 1
     
     def perimetro(self):
-        return 2 * self.lado1 + 2 * self.lado2
+        return 2 * self.base + 2 * self.altura
     
     def area(self):
-        return self.lado1 * self.lado2
+        return self.base * self.altura
     
     def diagonal(self):
-        return sqrt(self.lado1 ** 2 + self.lado2 ** 2)
+        return sqrt(self.base ** 2 + self.altura ** 2)
+    
+    def numDiagonal(self):
+        return int(self.__numLado * (self.__numLado - 3) / 2)
+    
+    def anguloInterno(self):
+        return (self.__numLado - 2) * 180
     
     def model(self):
-        Quadrado.model(self)
+        print(self.__str__())
+        print(f'Posição : ({self.ponto.x};{self.ponto.y})')
+        print(f'Perimetro : {self.perimetro()} un')
+        print(f'Area : {self.area():.2f} un²')
+        print(f'Numero de diagonais : {self.numDiagonal()}')
+        print(f'Soma dos angulos internos : {self.anguloInterno()}º')

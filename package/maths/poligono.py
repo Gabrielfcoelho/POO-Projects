@@ -1,12 +1,15 @@
-from package.maths.isNumber import isNumber
+from package.maths.isNumber import IsNumber
+from abc import ABC
 from package.maths.ponto import Ponto
 from math import tan, radians
 
-class Poligono(isNumber):
+class Poligono(ABC, IsNumber):
+    _numLado = 3
 
     def __init__(self, x, y, lado):
         self.ponto = Ponto(x, y) 
         self.lado = lado
+        
 
     def __str__(self):
         return f'Este polígono possui {self.numLado} lados de tamanho {self.lado} un'
@@ -49,7 +52,7 @@ class Poligono(isNumber):
         return (self.lado / 2) / (tan(radians(360 / (self.numLado * 2))))
 
     def model(self):
-        print(self.__str__())
+        print(self)
         print(f'Posição : ({self.ponto.x};{self.ponto.y})')
         print(f'Perimetro : {self.perimetro()} un')
         print(f'Area : {self.area():.2f} un²')

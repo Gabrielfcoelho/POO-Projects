@@ -3,12 +3,8 @@ from package.maths.trianguloEquilatero import TrianguloEquilatero
 
 
 def workspace():
-    x = 'abobrinha'
-    triangulo = TrianguloEquilatero(3, 4, x)
+    triangulo = TrianguloEquilatero(3, 4, 5)
     triangulo.model()
-    print(triangulo)
-    if super(type, type(triangulo)) == Poligono:
-            print('Sucesso!') 
     
 
 if __name__ == '__main__':

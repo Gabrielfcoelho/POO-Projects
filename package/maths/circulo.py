@@ -13,26 +13,29 @@ class Circulo(Ponto):
 
     @property
     def raio(self):
-        return self.__raio
+        return self._raio
     
     @raio.setter
     def raio(self, raio):
         if self.isNumber(raio) and raio > 0:
-            self.__raio = raio
+            self._raio = raio
         else:
-            self.__raio = 1
+            self._raio = 1
 
     def diametro(self):
-        return self.__raio * 2
+        return self._raio * 2
 
     def perimetro(self):
-        return 2 * pi * self.__raio
+        return 2 * pi * self._raio
 
     def area(self):
-        return pi * self.__raio ** 2
+        return pi * self._raio ** 2
 
     def model(self):
         print(self.__str__())
-        print(f'Diametro : {self.diametro()}')
-        print(f'Perimetro : {self.perimetro():.2f}')
-        print(f'Area : {self.area():.2f}')
+        print(f'Diametro : {self.diametro()} un')
+        print(f'Perimetro : {self.perimetro():.2f} un')
+        print(f'Area : {self.area():.2f} un²')
+
+    def type(self):
+        return Circulo

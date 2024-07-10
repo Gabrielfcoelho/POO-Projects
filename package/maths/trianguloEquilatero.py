@@ -5,7 +5,7 @@ class TrianguloEquilatero(Poligono):
 
     def __init__(self, x, y, lado):
         super().__init__(x, y, lado)
-        self.numLado = 3
+
 
     def __str__(self):
         return f'Triângulo Equilátero com lado = {self.lado} un'

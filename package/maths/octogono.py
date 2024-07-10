@@ -11,11 +11,11 @@ class Octogono(Poligono):
     
     @property
     def numLado(self):
-        return self.__numLado
+        return self._numLado
     
     @numLado.setter
     def numLado(self, x):
         if x == 8:
-            self.__numLado = x
+            self._numLado = x
         else:
-            self.__numLado = 8
+            self._numLado = 8
